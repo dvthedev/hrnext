@@ -1,5 +1,6 @@
 import './globals.css'
 
+import AppProvider from '@/components/AppProvider'
 import { Dosis } from 'next/font/google'
 import type { Metadata } from 'next'
 
@@ -17,7 +18,9 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="en">
-      <body className={primary_font.className}>{children}</body>
+      <body className={primary_font.className}>
+        <AppProvider>{children}</AppProvider>
+      </body>
     </html>
   )
 }
