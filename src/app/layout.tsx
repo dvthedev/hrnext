@@ -1,7 +1,16 @@
 import './globals.css'
 
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
+
 import AppProvider from '@/components/AppProvider'
 import ArchiveButton from '@/components/ArchiveButton'
+import { Button } from '@/components/ui/button'
 import { Dosis } from 'next/font/google'
 import Header from '@/components/Header'
 import HelpButton from '@/components/HelpButton'
@@ -45,19 +54,41 @@ const RootLayout = ({
                 <div className="flex flex-col h-full max-h-screen">
                   <div className="border-b h-8">right top</div>
                   <div className="flex-1">right middle</div>
-                  <div className="max-h-60 overflow-auto border-t hover:z-10 p-2">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Maiores ad numquam temporibus repellendus, officia harum
-                    nemo voluptas ratione laboriosam voluptatum, dolorem
-                    excepturi? Illo perspiciatis voluptate doloribus, dolorum
-                    quibusdam repellat qui? Lorem ipsum dolor, sit amet
-                    consectetur adipisicing elit. Dicta, esse. Dolorum itaque
-                    laborum commodi voluptas qui ducimus doloribus blanditiis,
-                    totam minus vitae omnis debitis quidem aut, nisi cum nam
-                    natus. Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Voluptatibus, tempore fugit recusandae neque fuga
-                    suscipit pariatur est. Quo, omnis sapiente assumenda tenetur
-                    facere eligendi vel mollitia. Nulla eveniet qui ipsa.
+                  <div className="max-h-60 overflow-auto hover:z-10 p-2">
+                    <div className="flex flex-col gap-2">
+                      <Card>
+                        <CardHeader className="p-2 pt-0 md:p-4">
+                          <CardTitle className="text-xl">
+                            Upgrade to Pro
+                          </CardTitle>
+                          <CardDescription>
+                            Unlock all features and get unlimited access to our
+                            support team.
+                          </CardDescription>
+                        </CardHeader>
+                        <CardContent className="p-2 pt-0 md:p-4 md:pt-0">
+                          <Button size="sm" className="w-full rounded-full">
+                            Upgrade
+                          </Button>
+                        </CardContent>
+                      </Card>
+                      <Card>
+                        <CardHeader className="p-2 pt-0 md:p-4">
+                          <CardTitle className="text-xl">
+                            Introducing New Cloud
+                          </CardTitle>
+                          <CardDescription>
+                            Get started with our new cloud service and get
+                            unlimited storage.
+                          </CardDescription>
+                        </CardHeader>
+                        <CardContent className="p-2 pt-0 md:p-4 md:pt-0">
+                          <Button size="sm" className="w-full rounded-full">
+                            Get Started
+                          </Button>
+                        </CardContent>
+                      </Card>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -51,6 +51,7 @@ const SideNav: React.FC = () => {
         icon={CloudIcon}
         path="cloud"
         activePath={activePath}
+        badge="New"
       />
     </nav>
   )

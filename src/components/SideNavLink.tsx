@@ -1,3 +1,4 @@
+import { Badge } from './ui/badge'
 import Link from 'next/link'
 import { LucideIcon } from 'lucide-react'
 
@@ -6,6 +7,7 @@ type SideNavLinkProps = {
   icon: LucideIcon
   path: string
   activePath: string
+  badge?: string
 }
 
 const SideNavLink: React.FC<SideNavLinkProps> = ({
@@ -13,6 +15,7 @@ const SideNavLink: React.FC<SideNavLinkProps> = ({
   icon: SideNavLinkIcon,
   path,
   activePath,
+  badge,
 }) => {
   return (
     <Link
@@ -23,6 +26,12 @@ const SideNavLink: React.FC<SideNavLinkProps> = ({
     >
       <SideNavLinkIcon className="w-6 aspect-auto" />
       <span>{title}</span>
+
+      {badge && (
+        <Badge className="ml-auto flex h-6 shrink-0 items-center justify-center rounded-full">
+          {badge}
+        </Badge>
+      )}
     </Link>
   )
 }
