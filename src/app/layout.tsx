@@ -1,8 +1,10 @@
 import './globals.css'
 
 import AppProvider from '@/components/AppProvider'
+import ArchiveButton from '@/components/ArchiveButton'
 import { Dosis } from 'next/font/google'
 import Header from '@/components/Header'
+import HelpButton from '@/components/HelpButton'
 import MagicInput from '@/components/MagicInput'
 import type { Metadata } from 'next'
 import SideNav from '@/components/SideNav'
@@ -23,9 +25,9 @@ const RootLayout = ({
     <html lang="en">
       <body className={primary_font.className}>
         <AppProvider>
-          <main className="relative bg-background text-foreground">
+          <div className="relative bg-background text-foreground">
             <div className="w-full min-h-screen grid lg:grid-cols-[280px_1fr_280px] md:grid-cols-[220px_1fr_220px] sm:grid-cols-[220px_1fr_220px]">
-              <div className="hidden border-r md:block">
+              <div className="hidden md:block">
                 <aside className="flex flex-col h-full max-h-screen">
                   <header className="flex items-center justify-between px-4 border-b h-16">
                     <Header />
@@ -35,19 +37,35 @@ const RootLayout = ({
                   </div>
                 </aside>
               </div>
-              {children}
-              <div className="hidden border-l md:block">
+              <main className="flex flex-col">
+                <div className="flex-1 border-x-2">{children}</div>
+                <div className="h-28 border-gradient-x-2"></div>
+              </main>
+              <div className="hidden md:block">
                 <div className="flex flex-col h-full max-h-screen">
                   <div className="border-b h-8">right top</div>
                   <div className="flex-1">right middle</div>
-                  <div className="max-h-60 overflow-auto border-t hover:z-10">
-                    right bottom
+                  <div className="max-h-60 overflow-auto border-t hover:z-10 p-2">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Maiores ad numquam temporibus repellendus, officia harum
+                    nemo voluptas ratione laboriosam voluptatum, dolorem
+                    excepturi? Illo perspiciatis voluptate doloribus, dolorum
+                    quibusdam repellat qui? Lorem ipsum dolor, sit amet
+                    consectetur adipisicing elit. Dicta, esse. Dolorum itaque
+                    laborum commodi voluptas qui ducimus doloribus blanditiis,
+                    totam minus vitae omnis debitis quidem aut, nisi cum nam
+                    natus. Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Voluptatibus, tempore fugit recusandae neque fuga
+                    suscipit pariatur est. Quo, omnis sapiente assumenda tenetur
+                    facere eligendi vel mollitia. Nulla eveniet qui ipsa.
                   </div>
                 </div>
               </div>
             </div>
             <MagicInput />
-          </main>
+            <ArchiveButton />
+            <HelpButton />
+          </div>
         </AppProvider>
       </body>
     </html>
