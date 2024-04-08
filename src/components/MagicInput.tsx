@@ -8,7 +8,7 @@ const MagicInput = () => {
 
   return (
     <Input
-      className="absolute bottom-8 px-12 text-xl text-muted-foreground left-0 right-0 mx-auto w-2/3 h-12 rounded-full border bg-muted shadow-lg shadow-primary/50"
+      className="absolute bottom-8 px-12 text-xl text-muted-foreground left-0 right-0 mx-auto w-2/3 h-12 rounded-full border bg-muted shadow-md hover:shadow-lg shadow-primary/20 hover:shadow-primary/50 transition-all"
       type="text"
       placeholder="Feel the Magic"
       onKeyDown={(e) => {
