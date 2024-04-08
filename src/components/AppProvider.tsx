@@ -1,5 +1,6 @@
 'use client'
 
+import { ClerkProvider } from '@clerk/nextjs'
 import { Toaster } from './ui/toaster'
 import { TooltipProvider } from './ui/tooltip'
 
@@ -9,10 +10,12 @@ type AppProviderProps = {
 
 const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   return (
-    <TooltipProvider>
-      {children}
-      <Toaster />
-    </TooltipProvider>
+    <ClerkProvider>
+      <TooltipProvider>
+        {children}
+        <Toaster />
+      </TooltipProvider>
+    </ClerkProvider>
   )
 }
 
