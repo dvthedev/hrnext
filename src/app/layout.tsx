@@ -33,7 +33,7 @@ const RootLayout = ({
                   <header className="flex items-center justify-between px-4 border-b h-16">
                     <Header />
                   </header>
-                  <div className="flex-1 p-2">
+                  <div className="flex-1 py-2">
                     <SideNav />
                   </div>
                 </aside>
