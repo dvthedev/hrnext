@@ -94,6 +94,52 @@ pnpm db:studio
 
 Contributions are welcome! Feel free to open issues or pull requests for any improvements or features you'd like to add.
 
+### Guidelines
+
+#### Commit Message Format
+
+Each commit message consists of a header, a body and a footer. The header has a special format that includes a type, a scope and a subject:
+
+https://www.conventionalcommits.org/
+
+```
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+The **header** is mandatory and the **scope** of the header is optional.
+
+Any line of the commit message cannot be longer 100 characters! This allows the message to be easier
+to read on GitHub as well as in various git tools.
+
+The footer should contain a [closing reference to an issue](https://help.github.com/articles/closing-issues-via-commit-messages/) if any.
+
+##### Types `<type>`
+
+Must be one of the following:
+
+- `build`: Changes that affect the build system or external dependencies
+- `ci`: Changes to our CI configuration files and scripts
+- `docs`: Documentation only changes
+- `feat`: A new feature
+- `fix`: A bug fix
+- `perf`: A code change that improves performance
+- `refactor`: A code change that neither fixes a bug nor adds a feature
+- `style`: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+- `test`: Adding missing tests or correcting existing tests
+
+##### Scopes `<scope>`
+
+The scope is like context. The following is the list of supported scopes (feel free to update any new scopes):
+
+- `ui`
+- `api`
+- `db`
+- `lib`
+
 ## License
 
 No license yet.
