@@ -1,0 +1,20 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1712681849723,
+      "tag": "0000_outstanding_union_jack",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1712767284833,
+      "tag": "0001_polite_bulldozer",
+      "breakpoints": true
+    }
+  ]
+}
