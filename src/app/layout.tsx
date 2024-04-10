@@ -13,7 +13,7 @@ import SideNav from '@/components/SideNav'
 const primary_font = Dosis({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'HT Next',
+  title: 'HR Next',
   description: 'AI First Next(js) Generation HR Solution',
 }
 
