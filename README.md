@@ -142,4 +142,4 @@ The scope is like context. The following is the list of supported scopes (feel f
 
 ## License
 
-No license yet.
+()[https://en.wikipedia.org/wiki/WTFPL]
