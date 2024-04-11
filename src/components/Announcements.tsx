@@ -20,7 +20,7 @@ const Announcements: React.FC = () => {
 
   return (
     <div className="flex flex-col gap-2">
-      {announcements.map((announcement) => (
+      {announcements?.map((announcement) => (
         <Announcement
           key={announcement.id}
           title={announcement.title}

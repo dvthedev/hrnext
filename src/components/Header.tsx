@@ -6,7 +6,7 @@ const Header: React.FC = () => {
     <>
       <h1 className="text-2xl font-medium">HR Next</h1>
       <div className="">
-        <UserButton />
+        <UserButton afterSignOutUrl='/sign-in' />
       </div>
       <ClerkLoading>
         <Avatar>
