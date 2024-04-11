@@ -1,6 +1,6 @@
-import { AnnouncementSelect, announcementTable } from '@/db/schema'
+import { AnnouncementSelect, announcementTable } from '@/server/db/schema'
 
-import db from '@/db/drizzle'
+import db from '@/server/db/drizzle'
 
 export const GET = async () => {
   // const announcements: AnnouncementSelect[] = [

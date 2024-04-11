@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 
 import Announcement from './Announcement'
-import { AnnouncementSelect } from '@/db/schema'
+import { AnnouncementSelect } from '@/server/db/schema'
 
 const Announcements: React.FC = () => {
   const [announcements, setAnnouncements] = useState<AnnouncementSelect[]>([])

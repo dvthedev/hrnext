@@ -1,0 +1,41 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1712681849723,
+      "tag": "0000_outstanding_union_jack",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1712767284833,
+      "tag": "0001_polite_bulldozer",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1712835317748,
+      "tag": "0002_watery_psylocke",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1712853324499,
+      "tag": "0003_stiff_nico_minoru",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1712854719275,
+      "tag": "0004_noisy_wild_pack",
+      "breakpoints": true
+    }
+  ]
+}
