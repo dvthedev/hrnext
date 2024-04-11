@@ -1,5 +1,25 @@
 import { char, pgTable, serial, text, timestamp } from 'drizzle-orm/pg-core'
 
+export const userTable = pgTable('users', {
+  id: serial('id').primaryKey(),
+  externalId: char('external_id', { length: 100 }),
+  userId: char('user_id', { length: 100 }).notNull(),
+  username: text('username'),
+  email: text('email'),
+  firstName: text('first_name'),
+  lastName: text('last_name'),
+  gender: text('gender'),
+  imageUrl: text('image_url'),
+  createdAt: timestamp('created_at').defaultNow(),
+  updatedAt: timestamp('updated_at').defaultNow(),
+  status: text('status', {
+    enum: ['active', 'inactive', 'removed'],
+  }).notNull(),
+})
+
+export type UserSelect = typeof userTable.$inferSelect
+export type UserInsert = typeof userTable.$inferInsert
+
 export const sessionTable = pgTable('sessions', {
   id: serial('id').primaryKey(),
   clientId: char('client_id', { length: 100 }).notNull(),

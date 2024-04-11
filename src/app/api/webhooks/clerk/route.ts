@@ -1,8 +1,6 @@
-import { SessionInsert, sessionTable } from '@/db/schema'
-import { SessionJSON, WebhookEvent } from '@clerk/nextjs/server'
-
 import { Webhook } from 'svix'
-import db from '@/db/drizzle'
+import { WebhookEvent } from '@clerk/nextjs/server'
+import { handleWebhookEvents } from '@/server/handlers/clerkWebhookHander'
 import { headers } from 'next/headers'
 
 // TODO: remove this
@@ -40,11 +38,11 @@ export const POST = async (req: Request) => {
   // Create a new Svix instance with your secret.
   const wh = new Webhook(WEBHOOK_SECRET)
 
-  let evt: WebhookEvent
+  let event: WebhookEvent
 
   // Verify the payload with the headers
   try {
-    evt = wh.verify(body, {
+    event = wh.verify(body, {
       'svix-id': svix_id,
       'svix-timestamp': svix_timestamp,
       'svix-signature': svix_signature,
@@ -57,55 +55,13 @@ export const POST = async (req: Request) => {
   }
 
   // Get the ID and type
-  const { id } = evt.data
-  const eventType = evt.type
+  const { id } = event.data
+  const eventType = event.type
 
-  switch (eventType) {
-    case 'session.created' ||
-      'session.ended' ||
-      'session.removed' ||
-      'session.revoked':
-      await handleSessionEvent(eventType, evt.data)
-      break
-  }
+  await handleWebhookEvents(event)
 
   console.log(`Webhook with and ID of ${id} and type of ${eventType}`)
   console.log('Webhook body:', body)
 
   return new Response('', { status: 200 })
-}
-
-const handleSessionEvent = async (
-  eventType:
-    | 'session.created'
-    | 'session.ended'
-    | 'session.removed'
-    | 'session.revoked',
-  data: SessionJSON
-) => {
-  const {
-    client_id,
-    user_id,
-    status,
-    created_at,
-    updated_at,
-    expire_at,
-    abandon_at,
-    last_active_at,
-  } = data
-
-  const newSession: SessionInsert = {
-    clientId: client_id,
-    userId: user_id,
-    status: status as 'active' | 'ended' | 'removed' | 'revoked',
-    lastActiveAt: new Date(last_active_at),
-    expireAt: new Date(expire_at),
-    abandonAt: new Date(abandon_at),
-    createdAt: new Date(created_at),
-    updatedAt: new Date(updated_at),
-    eventType,
-  }
-  await db.insert(sessionTable).values(newSession)
-
-  console.log('Session created:', data)
 }

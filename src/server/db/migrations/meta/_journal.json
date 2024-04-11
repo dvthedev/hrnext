@@ -22,6 +22,20 @@
       "when": 1712835317748,
       "tag": "0002_watery_psylocke",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1712853324499,
+      "tag": "0003_stiff_nico_minoru",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1712854719275,
+      "tag": "0004_noisy_wild_pack",
+      "breakpoints": true
     }
   ]
 }

@@ -7,8 +7,8 @@ if (!process.env.DRIZZLE_DATABASE_URL) {
 }
 
 export default defineConfig({
-  schema: './src/db/schema.ts',
-  out: './src/db/migrations',
+  schema: './src/server/db/schema.ts',
+  out: './src/server/db/migrations',
   driver: 'pg',
   dbCredentials: {
     connectionString: process.env.DRIZZLE_DATABASE_URL,
